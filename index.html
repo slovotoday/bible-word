@@ -28,67 +28,64 @@ cursor:pointer;
 }
 
 .card{
-max-width:720px;
+max-width:700px;
 width:100%;
 text-align:center;
-animation:fadeIn 1s ease;
+
+display:flex;
+flex-direction:column;
+justify-content:center;
+
+min-height:70vh;
 }
 
 .logo{
-font-size:12px;
+font-size:11px;
 letter-spacing:8px;
 text-transform:uppercase;
-color:#9a9a9a;
-margin-bottom:35px;
+color:#b0b0b0;
+margin-bottom:20px;
 }
 
 .line{
-width:60px;
+width:50px;
 height:1px;
 background:#e5e5e5;
-margin:0 auto 50px;
+margin:0 auto 60px;
 }
 
 .verse{
-font-size:44px;
-line-height:1.7;
+font-size:52px;
+line-height:1.35;
 font-weight:200;
-letter-spacing:-1px;
+letter-spacing:-1.5px;
 
-min-height:180px;
+min-height:160px;
 
 display:flex;
 align-items:center;
 justify-content:center;
 
-margin-bottom:20px;
+margin-bottom:25px;
 
-opacity:1;
 transition:opacity .4s ease;
 }
 
 .ref{
-font-size:12px;
-letter-spacing:2px;
+font-size:11px;
+letter-spacing:3px;
 text-transform:uppercase;
 color:#999;
 
-height:20px;
-
-display:flex;
-align-items:center;
-justify-content:center;
+margin-bottom:40px;
 
 transition:opacity .4s ease;
 }
 
 .footer{
-margin-top:60px;
-font-size:12px;
-color:#c0c0c0;
+font-size:11px;
 letter-spacing:1px;
-
-height:20px;
+color:#c7c7c7;
 }
 
 @keyframes fadeIn{
