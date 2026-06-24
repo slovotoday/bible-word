@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>slovo.today</title>
+<title>слово дня</title>
 
 <style>
 
@@ -51,19 +51,34 @@ margin:0 auto 50px;
 
 .verse{
 font-size:44px;
-line-height:1.75;
+line-height:1.7;
 font-weight:200;
 letter-spacing:-1px;
-margin-bottom:28px;
+
+min-height:180px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
+margin-bottom:20px;
+
 opacity:1;
 transition:opacity .4s ease;
 }
 
 .ref{
-font-size:13px;
-letter-spacing:1px;
-color:#9a9a9a;
-opacity:1;
+font-size:12px;
+letter-spacing:2px;
+text-transform:uppercase;
+color:#999;
+
+height:20px;
+
+display:flex;
+align-items:center;
+justify-content:center;
+
 transition:opacity .4s ease;
 }
 
@@ -72,6 +87,8 @@ margin-top:60px;
 font-size:12px;
 color:#c0c0c0;
 letter-spacing:1px;
+
+height:20px;
 }
 
 @keyframes fadeIn{
