@@ -48,11 +48,18 @@ margin:0 auto 40px;
 }
 
 .verse{
-font-size:34px;
+font-size:40px;
 line-height:1.6;
 font-weight:300;
-margin-bottom:20px;
+margin-bottom:18px;
 }
+  
+ .ref{
+font-size:14px;
+color:#999;
+letter-spacing:1px;
+margin-bottom:30px;
+} 
 
 .btn{
 margin-top:40px;
@@ -93,7 +100,7 @@ transform:translateY(0);
 <div class="line"></div>
 
 <div id="verse" class="verse"></div>
-
+<div id="ref" class="ref"></div>
 <button class="btn" onclick="newVerse()">
 Отримати інше слово
 </button>
@@ -104,35 +111,25 @@ transform:translateY(0);
 
 const verses = [
 
-"Не бійся, бо Я з тобою. — Ісая 41:10",
+{
+text:"Не бійся, бо Я з тобою.",
+ref:"Ісая 41:10"
+},
 
-"Будь сильний і мужній. — Ісус Навин 1:9",
+{
+text:"Будь сильний і мужній.",
+ref:"Ісус Навин 1:9"
+},
 
-"Любов ніколи не перестає. — 1 Коринтян 13:8",
+{
+text:"Любов ніколи не перестає.",
+ref:"1 Коринтян 13:8"
+},
 
-"Просіть — і буде дано вам. — Матвія 7:7",
-
-"Господь — мій Пастир. — Псалом 23:1",
-
-"Для Бога немає нічого неможливого. — Луки 1:37",
-
-"Мир залишаю вам. — Івана 14:27",
-
-"Радійте завжди. — 1 Солунян 5:16",
-
-"Блаженні миротворці. — Матвія 5:9",
-
-"Надійся на Господа всім серцем. — Приповісті 3:5",
-
-"Все можу в Тому, Хто мене зміцнює. — Филип'ян 4:13",
-
-"Шукайте і знайдете. — Матвія 7:7",
-
-"Господь близький до всіх, хто кличе Його. — Псалом 145:18",
-
-"Світло світить у темряві. — Івана 1:5",
-
-"Будьте добрі один до одного. — Ефесян 4:32"
+{
+text:"Для Бога немає нічого неможливого.",
+ref:"Луки 1:37"
+}
 
 ];
 
@@ -144,11 +141,21 @@ verses[Math.floor(Math.random()*verses.length)];
 const block =
 document.getElementById("verse");
 
+const ref =
+document.getElementById("ref");
+
 block.style.opacity=0;
+ref.style.opacity=0;
 
 setTimeout(()=>{
-block.innerText=verse;
+
+block.innerText = verse.text;
+
+ref.innerText = verse.ref;
+
 block.style.opacity=1;
+ref.style.opacity=1;
+
 },200);
 
 }
