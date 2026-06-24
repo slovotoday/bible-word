@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Слово для тебе</title>
+
+<style>
+body{
+    margin:0;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:#fff;
+    font-family:-apple-system,BlinkMacSystemFont,sans-serif;
+    text-align:center;
+    padding:30px;
+}
+
+.card{
+    max-width:700px;
+}
+
+.title{
+    font-size:14px;
+    letter-spacing:3px;
+    color:#888;
+    margin-bottom:30px;
+}
+
+.verse{
+    font-size:32px;
+    line-height:1.5;
+    font-weight:500;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <div class="title">СЛОВО ДЛЯ ТЕБЕ</div>
+    <div id="verse" class="verse"></div>
+</div>
+
+<script>
+const verses = [
+"Не бійся, бо Я з тобою. — Ісая 41:10",
+"Будь сильний і мужній. — Ісус Навин 1:9",
+"Любов ніколи не перестає. — 1 Коринтян 13:8",
+"Просіть — і буде дано вам. — Матвія 7:7",
+"Господь — мій Пастир. — Псалом 23:1",
+"Для Бога немає нічого неможливого. — Луки 1:37",
+"Мир залишаю вам. — Івана 14:27",
+"Радійте завжди. — 1 Солунян 5:16"
+];
+
+document.getElementById("verse").innerText =
+verses[Math.floor(Math.random() * verses.length)];
+</script>
+
+</body>
+</html>
