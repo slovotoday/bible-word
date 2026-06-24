@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Слово для тебе</title>
+<title>slovo.today</title>
 
 <style>
 
@@ -16,20 +16,20 @@ box-sizing:border-box;
 }
 
 body{
-height:100vh;
+min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#ffffff;
-font-family:-apple-system,BlinkMacSystemFont,sans-serif;
-padding:32px;
+background:#fff;
+font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+padding:30px;
 color:#111;
 }
 
 .card{
-max-width:700px;
+max-width:720px;
+width:100%;
 text-align:center;
-animation:fadeIn .8s ease;
 }
 
 .label{
@@ -37,43 +37,52 @@ font-size:12px;
 letter-spacing:4px;
 text-transform:uppercase;
 color:#999;
-margin-bottom:40px;
+margin-bottom:32px;
 }
 
 .line{
 width:80px;
 height:1px;
-background:#ddd;
+background:#e5e5e5;
 margin:0 auto 40px;
 }
 
 .verse{
 font-size:40px;
 line-height:1.6;
-font-weight:300;
-margin-bottom:18px;
+font-weight:200;
+letter-spacing:-0.5px;
+margin-bottom:24px;
+transition:opacity .35s ease;
 }
-  
- .ref{
+
+.ref{
 font-size:14px;
 color:#999;
 letter-spacing:1px;
-margin-bottom:30px;
-} 
+transition:opacity .35s ease;
+}
 
 .btn{
-margin-top:40px;
-padding:14px 24px;
-background:white;
+margin-top:50px;
+padding:16px 30px;
+background:#fff;
 border:1px solid #ddd;
 border-radius:999px;
 font-size:14px;
+letter-spacing:.5px;
 cursor:pointer;
 transition:.25s;
 }
 
 .btn:hover{
 transform:translateY(-2px);
+}
+
+.footer{
+margin-top:24px;
+font-size:12px;
+color:#bbb;
 }
 
 @keyframes fadeIn{
@@ -87,6 +96,10 @@ transform:translateY(0);
 }
 }
 
+.card{
+animation:fadeIn .8s ease;
+}
+
 </style>
 
 </head>
@@ -95,15 +108,21 @@ transform:translateY(0);
 
 <div class="card">
 
-<div class="label">слово для тебе</div>
+<div class="label">slovo.today</div>
 
 <div class="line"></div>
 
 <div id="verse" class="verse"></div>
+
 <div id="ref" class="ref"></div>
+
 <button class="btn" onclick="newVerse()">
 Отримати інше слово
 </button>
+
+<div class="footer">
+торкнись брелка знову, щоб отримати нове слово
+</div>
 
 </div>
 
@@ -129,32 +148,71 @@ ref:"1 Коринтян 13:8"
 {
 text:"Для Бога немає нічого неможливого.",
 ref:"Луки 1:37"
+},
+
+{
+text:"Мир залишаю вам.",
+ref:"Івана 14:27"
+},
+
+{
+text:"Просіть — і буде дано вам.",
+ref:"Матвія 7:7"
+},
+
+{
+text:"Шукайте і знайдете.",
+ref:"Матвія 7:7"
+},
+
+{
+text:"Все можу в Тому, Хто мене зміцнює.",
+ref:"Филип'ян 4:13"
+},
+
+{
+text:"Господь — мій Пастир.",
+ref:"Псалом 23:1"
+},
+
+{
+text:"Світло світить у темряві.",
+ref:"Івана 1:5"
+},
+
+{
+text:"Радійте завжди.",
+ref:"1 Солунян 5:16"
+},
+
+{
+text:"Надійся на Господа всім серцем.",
+ref:"Приповісті 3:5"
 }
 
 ];
 
 function newVerse(){
 
-const verse =
+const random =
 verses[Math.floor(Math.random()*verses.length)];
 
-const block =
+const verse =
 document.getElementById("verse");
 
 const ref =
 document.getElementById("ref");
 
-block.style.opacity=0;
-ref.style.opacity=0;
+verse.style.opacity = 0;
+ref.style.opacity = 0;
 
 setTimeout(()=>{
 
-block.innerText = verse.text;
+verse.innerText = random.text;
+ref.innerText = random.ref;
 
-ref.innerText = verse.ref;
-
-block.style.opacity=1;
-ref.style.opacity=1;
+verse.style.opacity = 1;
+ref.style.opacity = 1;
 
 },200);
 
