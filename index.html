@@ -20,75 +20,65 @@ min-height:100vh;
 display:flex;
 justify-content:center;
 align-items:center;
-background:#fff;
-font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+background:#ffffff;
 padding:30px;
+font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","Segoe UI",sans-serif;
 color:#111;
+cursor:pointer;
 }
 
 .card{
 max-width:720px;
 width:100%;
 text-align:center;
+animation:fadeIn 1s ease;
 }
 
-.label{
+.logo{
 font-size:12px;
-letter-spacing:4px;
+letter-spacing:8px;
 text-transform:uppercase;
-color:#999;
-margin-bottom:32px;
+color:#9a9a9a;
+margin-bottom:35px;
 }
 
 .line{
-width:80px;
+width:60px;
 height:1px;
 background:#e5e5e5;
-margin:0 auto 40px;
+margin:0 auto 50px;
 }
 
 .verse{
-font-size:40px;
-line-height:1.6;
-font-weight:200;
-letter-spacing:-0.5px;
-margin-bottom:24px;
-transition:opacity .35s ease;
+font-size:42px;
+line-height:1.7;
+font-weight:100;
+font-style:italic;
+letter-spacing:-0.8px;
+margin-bottom:28px;
+opacity:1;
+transition:opacity .4s ease;
 }
 
 .ref{
-font-size:14px;
-color:#999;
+font-size:13px;
 letter-spacing:1px;
-transition:opacity .35s ease;
-}
-
-.btn{
-margin-top:50px;
-padding:16px 30px;
-background:#fff;
-border:1px solid #ddd;
-border-radius:999px;
-font-size:14px;
-letter-spacing:.5px;
-cursor:pointer;
-transition:.25s;
-}
-
-.btn:hover{
-transform:translateY(-2px);
+color:#9a9a9a;
+opacity:1;
+transition:opacity .4s ease;
 }
 
 .footer{
-margin-top:24px;
+margin-top:60px;
 font-size:12px;
-color:#bbb;
+color:#c0c0c0;
+letter-spacing:1px;
 }
 
 @keyframes fadeIn{
 from{
 opacity:0;
-transform:translateY(15px);
+transform:translateY(20px);
 }
 to{
 opacity:1;
@@ -96,19 +86,15 @@ transform:translateY(0);
 }
 }
 
-.card{
-animation:fadeIn .8s ease;
-}
-
 </style>
 
 </head>
 
-<body>
+<body onclick="newVerse()">
 
 <div class="card">
 
-<div class="label">slovo.today</div>
+<div class="logo">SLOVO.TODAY</div>
 
 <div class="line"></div>
 
@@ -116,12 +102,8 @@ animation:fadeIn .8s ease;
 
 <div id="ref" class="ref"></div>
 
-<button class="btn" onclick="newVerse()">
-Отримати інше слово
-</button>
-
 <div class="footer">
-торкнись брелка знову, щоб отримати нове слово
+торкнись знову для нового слова
 </div>
 
 </div>
@@ -130,65 +112,26 @@ animation:fadeIn .8s ease;
 
 const verses = [
 
-{
-text:"Не бійся, бо Я з тобою.",
-ref:"Ісая 41:10"
-},
-
-{
-text:"Будь сильний і мужній.",
-ref:"Ісус Навин 1:9"
-},
-
-{
-text:"Любов ніколи не перестає.",
-ref:"1 Коринтян 13:8"
-},
-
-{
-text:"Для Бога немає нічого неможливого.",
-ref:"Луки 1:37"
-},
-
-{
-text:"Мир залишаю вам.",
-ref:"Івана 14:27"
-},
-
-{
-text:"Просіть — і буде дано вам.",
-ref:"Матвія 7:7"
-},
-
-{
-text:"Шукайте і знайдете.",
-ref:"Матвія 7:7"
-},
-
-{
-text:"Все можу в Тому, Хто мене зміцнює.",
-ref:"Филип'ян 4:13"
-},
-
-{
-text:"Господь — мій Пастир.",
-ref:"Псалом 23:1"
-},
-
-{
-text:"Світло світить у темряві.",
-ref:"Івана 1:5"
-},
-
-{
-text:"Радійте завжди.",
-ref:"1 Солунян 5:16"
-},
-
-{
-text:"Надійся на Господа всім серцем.",
-ref:"Приповісті 3:5"
-}
+{text:"Не бійся, бо Я з тобою.",ref:"Ісая 41:10"},
+{text:"Будь сильний і мужній.",ref:"Ісус Навин 1:9"},
+{text:"Любов ніколи не перестає.",ref:"1 Коринтян 13:8"},
+{text:"Для Бога немає нічого неможливого.",ref:"Луки 1:37"},
+{text:"Мир залишаю вам.",ref:"Івана 14:27"},
+{text:"Просіть — і буде дано вам.",ref:"Матвія 7:7"},
+{text:"Шукайте і знайдете.",ref:"Матвія 7:7"},
+{text:"Все можу в Тому, Хто мене зміцнює.",ref:"Филип'ян 4:13"},
+{text:"Господь — мій Пастир.",ref:"Псалом 23:1"},
+{text:"Світло світить у темряві.",ref:"Івана 1:5"},
+{text:"Радійте завжди.",ref:"1 Солунян 5:16"},
+{text:"Надійся на Господа всім серцем.",ref:"Приповісті 3:5"},
+{text:"Блаженні миротворці.",ref:"Матвія 5:9"},
+{text:"Господь близький до всіх, хто кличе Його.",ref:"Псалом 145:18"},
+{text:"Твоя віра спасла тебе.",ref:"Марка 10:52"},
+{text:"Я є дорога, правда і життя.",ref:"Івана 14:6"},
+{text:"Не турбуйтеся про завтрашній день.",ref:"Матвія 6:34"},
+{text:"Бог є любов.",ref:"1 Івана 4:8"},
+{text:"Радість Господня — ваша сила.",ref:"Неємія 8:10"},
+{text:"Мир вам.",ref:"Івана 20:19"}
 
 ];
 
@@ -203,18 +146,18 @@ document.getElementById("verse");
 const ref =
 document.getElementById("ref");
 
-verse.style.opacity = 0;
-ref.style.opacity = 0;
+verse.style.opacity=0;
+ref.style.opacity=0;
 
 setTimeout(()=>{
 
-verse.innerText = random.text;
-ref.innerText = random.ref;
+verse.innerText=random.text;
+ref.innerText=random.ref;
 
-verse.style.opacity = 1;
-ref.style.opacity = 1;
+verse.style.opacity=1;
+ref.style.opacity=1;
 
-},200);
+},250);
 
 }
 
